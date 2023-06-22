@@ -58,8 +58,7 @@ const Hotline = () => {
     setTotalAmount(totalAmount - betValue);
     const index = value == 'red' ? 0 : value == 'black' ? 1 : 2;
     let betResult = false;
-    let calc = calcBetResult(); 
-    calc = index;
+    let calc = calcBetResult();  
     if(index == calc){
       betResult = true;
     }
