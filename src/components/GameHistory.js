@@ -8,8 +8,7 @@ const GameHistory = ({history}) => {
   useEffect(()=>{
     let hh = [...history];
     hh.reverse(); 
-    setLatesHistory(hh.slice(0, 24));
-    history.reverse();
+    setLatesHistory(hh); 
   }, [history])
 
   return (
@@ -34,6 +33,7 @@ const GameHistory = ({history}) => {
       >
         <div className="flex items-center justify-start h-full w-full overflow-hidden">
           {latestHistory.map((e, index) => {
+            if(index < 24) return;
             return (
               <div key={index} className={e==0 ? "red-circle" :e == 1 ? "black-circle" : 'hot-circle'} />
             );
@@ -54,7 +54,7 @@ const GameHistory = ({history}) => {
           >
             <div className="text-xs mx-2 mt-1 text-white">LAST RESULTS</div>
             <div className="flex m-1 mt-2 flex-wrap">
-              {history.map((e, index) => {
+              {latestHistory.map((e, index) => {
                 return (
                   <div
                     key={index}
