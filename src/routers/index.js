@@ -4,8 +4,8 @@ import Hotline from "../views/Hotline";
 
 export default function CasinoRouters() {
   return (
-    <Routes>
-      <Route path="hotline">
+    <Routes> 
+      <Route path="">
         <Route path="" element={<Hotline />} />
       </Route>
       <Route path="*" element={<NoPage />} />
