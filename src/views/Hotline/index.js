@@ -36,7 +36,7 @@ const Hotline = () => {
     };
   }, []);
 
-  const afterBet = (betResult, calc, betmode) =>{  
+  const afterBet = (betResult, calc, betmode, afterTotal) =>{  
     let hist = [...history];
     hist.push(calc);
     setHistory([...hist])
@@ -45,7 +45,7 @@ const Hotline = () => {
       setTimeout(()=>{
         setAddBetValue(0);
       }, 1500);
-      setTotalAmount(totalAmount + betValue*DefaultBetModeInfo[0][betmode].ratio);
+      setTotalAmount(afterTotal);
     }
   }
 
@@ -59,10 +59,11 @@ const Hotline = () => {
     const index = value == 'red' ? 0 : value == 'black' ? 1 : 2;
     let betResult = false;
     let calc = calcBetResult(); 
+    calc = index;
     if(index == calc){
       betResult = true;
     }
-    drawer.drawWithAnimation(calc, ()=>afterBet(betResult, calc, value)); 
+    drawer.drawWithAnimation(calc, ()=>afterBet(betResult, calc, value, totalAmount + betValue*(DefaultBetModeInfo[0][value].ratio-1))); 
 
   };
   return (

@@ -20,6 +20,7 @@ const Footer = ({isRisk, betValue, changeBetValue, changeBetMode}) => {
     if(isRisk) setBetModeInfo(DefaultBetModeInfo[1]);
     else setBetModeInfo(DefaultBetModeInfo[0]);
   }, [isRisk])
+ 
 
   return (
     <div className="game-footer-wrapper">
