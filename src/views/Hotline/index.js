@@ -105,8 +105,7 @@ const Hotline = () => {
           <Button variant="contained" color="success" onClick={()=>setEthereumAccount(null)}>Disconnect</Button>
           <p className="text-white">{`Wallet : ${ethereumAccount}`}</p>
         </div> : 
-        <a href="metamask.io/download/">Install Metamask Wallet</a>}
-        
+        <a className="text-white" href="https://metamask.io/download/">Install Metamask Wallet</a>} 
       </div>
       <div className="game-viewport">
         <div className="game-wrapper">
