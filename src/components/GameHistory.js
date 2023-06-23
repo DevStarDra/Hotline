@@ -33,7 +33,7 @@ const GameHistory = ({history}) => {
       >
         <div className="flex items-center justify-start h-full w-full overflow-hidden">
           {latestHistory.map((e, index) => {
-            if(index < 24) return;
+            if(index > 24) return;
             return (
               <div key={index} className={e==0 ? "red-circle" :e == 1 ? "black-circle" : 'hot-circle'} />
             );
